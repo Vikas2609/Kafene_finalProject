@@ -61,7 +61,7 @@ $(document).ready(()=>{
                     }
                 })
              }
-             else if(checked.expired==true && checked.lowStock==true){
+             else if(checked.expired==false && checked.lowStock==false){
                 proddetails.map(product=>{      
                     if(product.stock>=100 && new Date(product.expiryDate)>new Date()){    
                     let createdRow=createTableRow(product.id,product.medicineName,product.medicineBrand,product.expiryDate,product.unitPrice,product.stock)
