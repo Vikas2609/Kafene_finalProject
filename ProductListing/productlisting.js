@@ -41,7 +41,7 @@ $(document).ready(()=>{
         tablebody.text("");
         checked[e.target.name]=e.target.checked;
         let count=0;
-             if(checked.expired==false && checked.lowStock==true){
+             if(checked.expired==true && checked.lowStock==false){
                 console.log("case1")
                 proddetails.map(product=>{
                     
@@ -52,7 +52,7 @@ $(document).ready(()=>{
                     }
                 })
              }
-             else if(checked.expired==true && checked.lowStock==false){
+             else if(checked.expired==false && checked.lowStock==true){
                 proddetails.map(product=>{
                     if(product.stock>=100)  {       
                     let createdRow=createTableRow(product.id,product.medicineName,product.medicineBrand,product.expiryDate,product.unitPrice,product.stock)
